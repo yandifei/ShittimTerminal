@@ -1,218 +1,259 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[codz]
-*$py.class
+# ============================================================
+# 1. Python 编译/优化后的字节码文件
+# ============================================================
+__pycache__/           # Python 3 的字节码缓存目录
+*.py[codz]             # 匹配 .pyc, .pyo, .pyd 等编译文件
+*$py.class             # 某些 Python 实现生成的类文件
 
-# C extensions
-*.so
+# ============================================================
+# 2. C 扩展库（编译后动态链接库）
+# ============================================================
+*.so                   # Linux/Unix 共享库
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# ============================================================
+# 3. 打包与分发相关
+# ============================================================
+.Python                # 可能由 virtualenv 等生成的 Python 副本
+build/                 # 构建目录（setuptools 等）
+develop-eggs/          # 开发阶段的 egg 目录
+dist/                  # 分发打包输出目录（如 .whl, .tar.gz）
+downloads/             # 下载的依赖包存放目录
+eggs/                  # 解压后的 egg 包目录
+.eggs/                 # 同上，隐藏版本
+lib/                   # 安装的库文件
+lib64/                 # 64 位库文件
+parts/                 # 组件构建目录（如 zc.buildout）
+sdist/                 # 源码分发包输出目录
+var/                   # 运行时变量文件
+wheels/                # wheel 包存放目录
+share/python-wheels/   # 共享 wheel 包目录
+*.egg-info/            # egg 元信息目录
+.installed.cfg         # setuptools 安装配置
+*.egg                  # egg 包文件
+MANIFEST               # 清单文件（通常由 setuptools 生成）
 
-# PyInstaller
-#   Usually these files are written by a python script from a template
-#   before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+# ============================================================
+# 4. PyInstaller 相关（打包为可执行文件时产生）
+# ============================================================
+*.manifest             # 清单文件
+*.spec                 # PyInstaller 规格文件
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# ============================================================
+# 5. 安装日志与临时文件
+# ============================================================
+pip-log.txt            # pip 日志
+pip-delete-this-directory.txt  # pip 临时标记文件
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-.hypothesis/
-.pytest_cache/
-cover/
+# ============================================================
+# 6. 单元测试与覆盖率报告
+# ============================================================
+htmlcov/               # coverage 生成的 HTML 报告目录
+.tox/                  # tox 测试环境目录
+.nox/                  # nox 测试环境目录
+.coverage              # coverage 数据文件
+.coverage.*            # 其他 coverage 数据文件
+.cache                 # pytest 或其他工具的缓存
+nosetests.xml          # nose 测试报告
+coverage.xml           # coverage XML 报告
+*.cover                # coverage 数据文件
+*.py.cover             # coverage 数据文件（带源码）
+.hypothesis/           # Hypothesis 状态缓存
+.pytest_cache/         # pytest 缓存目录
+cover/                 # 旧版 coverage 目录
 
-# Translations
-*.mo
-*.pot
+# ============================================================
+# 7. 国际化与翻译文件
+# ============================================================
+*.mo                   # 编译后的消息文件
+*.pot                  # 可移植对象模板（翻译源）
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+# ============================================================
+# 8. Django 框架特定
+# ============================================================
+*.log                  # 日志文件
+local_settings.py      # 本地设置（通常包含敏感信息）
+db.sqlite3             # SQLite 数据库文件
+db.sqlite3-journal     # SQLite 日志
 
-# Flask stuff:
-instance/
-.webassets-cache
+# ============================================================
+# 9. Flask 框架特定
+# ============================================================
+instance/              # Flask 实例文件夹
+.webassets-cache       # webassets 缓存
 
-# Scrapy stuff:
-.scrapy
+# ============================================================
+# 10. Scrapy 爬虫框架
+# ============================================================
+.scrapy                # Scrapy 项目缓存
 
-# Sphinx documentation
-docs/_build/
+# ============================================================
+# 11. Sphinx 文档生成
+# ============================================================
+docs/_build/           # 文档构建输出目录
 
-# PyBuilder
-.pybuilder/
-target/
+# ============================================================
+# 12. PyBuilder 构建工具
+# ============================================================
+.pybuilder/            # PyBuilder 工作目录
+target/                # PyBuilder 输出目录
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# ============================================================
+# 13. Jupyter Notebook
+# ============================================================
+.ipynb_checkpoints/    # Notebook 自动检查点文件夹
 
-# IPython
-profile_default/
-ipython_config.py
+# ============================================================
+# 14. IPython 配置
+# ============================================================
+profile_default/       # IPython 默认配置文件目录
+ipython_config.py      # IPython 配置文件
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+# ============================================================
+# 15. pyenv（Python 版本管理）—— 默认不忽略 .python-version，可根据需要取消注释
+# ============================================================
+# .python-version      # pyenv 的 Python 版本文件（建议保留）
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-# Pipfile.lock
+# ============================================================
+# 16. pipenv（依赖管理）—— 默认不忽略 Pipfile.lock，根据项目决定
+# ============================================================
+# Pipfile.lock         # pipenv 锁定文件（建议提交）
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-# uv.lock
+# ============================================================
+# 17. UV（现代 Python 包管理器）—— 默认不忽略 uv.lock
+# ============================================================
+# uv.lock              # UV 锁定文件（建议提交）
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-# poetry.lock
-# poetry.toml
+# ============================================================
+# 18. Poetry（依赖管理）—— 默认不忽略 poetry.lock 和 poetry.toml
+# ============================================================
+# poetry.lock          # Poetry 锁定文件（建议提交）
+# poetry.toml          # Poetry 配置文件（可提交）
 
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
-# pdm.lock
-# pdm.toml
-.pdm-python
-.pdm-build/
+# ============================================================
+# 19. PDM（依赖管理）
+# ============================================================
+.pdm-python            # PDM 的 Python 版本标记（建议忽略）
+.pdm-build/            # PDM 构建目录
+# pdm.lock             # 锁定文件（建议提交）
+# pdm.toml             # 项目配置（可提交）
 
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-# pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
+# ============================================================
+# 20. Pixi（类似 conda 的包管理器）
+# ============================================================
+.pixi                  # Pixi 创建的虚拟环境目录
+# pixi.lock            # 锁定文件（建议提交）
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
+# ============================================================
+# 21. PEP 582（本地包目录，如 pyflow 或 pdm 使用）
+# ============================================================
+__pypackages__/        # 本地包目录
 
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
+# ============================================================
+# 22. Celery 分布式任务队列
+# ============================================================
+celerybeat-schedule    # Celery 调度文件
+celerybeat.pid         # Celery 进程 ID 文件
 
-# Redis
-*.rdb
-*.aof
-*.pid
+# ============================================================
+# 23. Redis 数据库
+# ============================================================
+*.rdb                  # Redis 快照文件
+*.aof                  # Redis 追加日志文件
+*.pid                  # Redis 进程 ID 文件
 
-# RabbitMQ
-mnesia/
-rabbitmq/
-rabbitmq-data/
+# ============================================================
+# 24. RabbitMQ 消息队列
+# ============================================================
+mnesia/                # RabbitMQ 数据目录
+rabbitmq/              # RabbitMQ 通用目录
+rabbitmq-data/         # RabbitMQ 数据目录
 
-# ActiveMQ
-activemq-data/
+# ============================================================
+# 25. ActiveMQ 消息队列
+# ============================================================
+activemq-data/         # ActiveMQ 数据目录
 
-# SageMath parsed files
-*.sage.py
+# ============================================================
+# 26. SageMath（数学软件）
+# ============================================================
+*.sage.py              # SageMath 解析生成的 Python 文件
 
-# Environments
-.env
-.envrc
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+# ============================================================
+# 27. 虚拟环境（所有常用名称）
+# ============================================================
+.env                   # 环境变量文件
+.envrc                 # direnv 环境配置
+.venv/                 # Python 虚拟环境目录（常见）
+env/                   # 虚拟环境目录
+venv/                  # 虚拟环境目录
+ENV/                   # 虚拟环境目录
+env.bak/               # 备份的虚拟环境
+venv.bak/              # 备份的虚拟环境
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# ============================================================
+# 28. IDE / 编辑器配置（部分）
+# ============================================================
+# Spyder
+.spyderproject         # Spyder 项目设置
+.spyproject            # Spyder 项目设置（旧版）
 
-# Rope project settings
-.ropeproject
+# Rope（Python 重构库）
+.ropeproject           # Rope 项目缓存
 
-# mkdocs documentation
-/site
+# PyCharm（具体模板在单独的 JetBrains.gitignore，这里可取消注释 .idea/）
+# .idea/               # 整个 PyCharm 项目目录（取消注释后全局忽略）
 
+# Visual Studio Code（同样有单独模板，这里可取消注释 .vscode/）
+# .vscode/             # 整个 VS Code 配置目录
+
+# 其他临时文件
+tempCodeRunnerFile.py  # 部分编辑器用于临时运行代码的文件
+
+# ============================================================
+# 29. 静态类型检查工具
+# ============================================================
 # mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
+.mypy_cache/           # mypy 类型检查缓存
+.dmypy.json            # mypy 守护进程状态
+dmypy.json             # 同上
 
-# Pyre type checker
-.pyre/
+# Pyre（Facebook 类型检查器）
+.pyre/                 # Pyre 缓存目录
 
-# pytype static type analyzer
-.pytype/
+# pytype（Google 类型检查器）
+.pytype/               # pytype 缓存目录
 
-# Cython debug symbols
-cython_debug/
+# Ruff（快速 Python linter）
+.ruff_cache/           # Ruff 缓存目录
 
-# PyCharm
-#   JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#   be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#   and can be added to the global gitignore or merged into this file.  For a more nuclear
-#   option (not recommended) you can uncomment the following to ignore the entire idea folder.
-# .idea/
+# ============================================================
+# 30. Cython 调试符号
+# ============================================================
+cython_debug/          # Cython 调试符号目录
 
-# Abstra
-#   Abstra is an AI-powered process automation framework.
-#   Ignore directories containing user credentials, local state, and settings.
-#   Learn more at https://abstra.io/docs
-.abstra/
+# ============================================================
+# 31. Abstra（流程自动化框架）
+# ============================================================
+.abstra/               # Abstra 的凭证、本地状态和设置
 
-# Visual Studio Code
-#   Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#   and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#   you could uncomment the following to ignore the entire vscode folder
-# .vscode/
-# Temporary file for partial code execution
-tempCodeRunnerFile.py
+# ============================================================
+# 32. 文档生成（其他）
+# ============================================================
+/site                  # mkdocs 等生成的网站目录
 
-# Ruff stuff:
-.ruff_cache/
+# ============================================================
+# 33. PyPI 配置文件
+# ============================================================
+.pypirc                # PyPI 认证配置（包含敏感信息）
 
-# PyPI configuration file
-.pypirc
+# ============================================================
+# 34. Marimo（交互式笔记本）
+# ============================================================
+marimo/_static/        # Marimo 静态资源
+marimo/_lsp/           # Marimo LSP 相关
+__marimo__/            # Marimo 运行时目录
 
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
-
-# Streamlit
-.streamlit/secrets.toml
+# ============================================================
+# 35. Streamlit（Web 应用框架）
+# ============================================================
+.streamlit/secrets.toml  # Streamlit 的密钥配置文件（敏感）
